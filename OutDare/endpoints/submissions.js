@@ -3,7 +3,7 @@
 module.exports.url = '/submissions/create';
 module.exports.verb = 'post';
 module.exports.handler = function (req, res) {
-    console.log(req);
+    console.log(req.body);
     var submission = new database.submission({
         user_id : req.body.user_id,
         dare_id : req.body.dare_id,
