@@ -10,7 +10,7 @@ module.exports.handler = function (req, res) {
     form.parse(req, function (err, fields, files) {
         var submission = new database.submission({
             user    : fields.user,
-            dare_id : parseInt( '0x' + fields.dare_id ),
+            dare_id : fields.dare_id,
             image   : fs.readFileSync(files.image.path)
         });
         submission.save(function (e) {

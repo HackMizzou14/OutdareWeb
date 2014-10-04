@@ -12,6 +12,7 @@ module.exports.handler = function (req, res) {
     });
     dare.save(function (e) {
         if (e) throw ("error saving new dare", e);
+        dare._id = '' + dare._id;
         res.json(dare);
     })
 }
