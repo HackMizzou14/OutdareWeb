@@ -30,7 +30,7 @@ Dare.statics.getDaresNearby = function (location, done) {
 var Submission = new Schema({
     user_id : Schema.Types.ObjectId,
     dare_id : Schema.Types.ObjectId,
-    image   : Schema.Types.Buffer
+    image   : Buffer
 });
 
 module.exports.user = mongoose.model('user', User);
