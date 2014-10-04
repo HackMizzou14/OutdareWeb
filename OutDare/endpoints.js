@@ -7,6 +7,7 @@ function attach(app, routeFile) {
     var url     = route.url;
     var verb    = route.verb;
     var handler = route.handler;
+    app[verb](url, handler);
 };
 
 module.exports.attachTo = function (app) {
