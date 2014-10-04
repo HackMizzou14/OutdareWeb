@@ -1,6 +1,6 @@
 ﻿var database = require('../database.js');
 var formidable = require('formidable');
-
+var fs = require('fs');
 module.exports.url = '/submissions/create';
 module.exports.verb = 'post';
 module.exports.handler = function (req, res) {
