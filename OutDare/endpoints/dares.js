@@ -11,5 +11,6 @@ module.exports.handler = function (req, res) {
     function (e, docs) {
         if (e) throw ("error getting dares", e);
         res.json(docs);
+        res.end();
     });
 }
