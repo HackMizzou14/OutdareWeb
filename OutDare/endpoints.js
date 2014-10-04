@@ -1,5 +1,5 @@
 ﻿var fs = require('fs');
-var routes = fs.readDirSync('./endpoints');
+var routes = fs.readdirSync('./endpoints');
 
 function attach(app, routeFile) {
     var route   = require(routeFile);
