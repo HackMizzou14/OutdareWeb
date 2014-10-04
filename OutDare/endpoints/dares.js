@@ -3,7 +3,7 @@
 module.exports.url = '/dares';
 module.exports.verb = 'get';
 module.exports.handler = function (req, res) {
-    database.dares.getDaresNearby(
+    database.dare.getDaresNearby(
     {
         lat: req.query.lat,
         lon: req.query.long
