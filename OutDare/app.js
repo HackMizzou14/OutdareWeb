@@ -29,6 +29,15 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+var database = require('./database.js');
+var endpoints = require('./endpoints.js');
+
+// open connections to database
+database.connect();
+
+// add endpoints to app object
+endpoints.attachTo(app);
+
 
 
 http.createServer(app).listen(app.get('port'), function(){
