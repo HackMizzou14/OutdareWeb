@@ -1,6 +1,6 @@
 ﻿var database = require('../database.js');
 
-module.exports.url = '/dare/create';
+module.exports.url = '/dares/create';
 module.exports.verb = 'post';
 module.exports.handler = function (req, res) {
     var dare = new database.dare({

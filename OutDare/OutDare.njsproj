@@ -35,7 +35,6 @@
     <Compile Include="endpoints.js" />
     <Compile Include="endpoints\createUser.js" />
     <Compile Include="endpoints\dares.js" />
-    <Compile Include="endpoints\dare_create.js" />
     <Compile Include="endpoints\image_submission.js" />
     <Compile Include="endpoints\login.js" />
     <Compile Include="endpoints\submissions.js" />
