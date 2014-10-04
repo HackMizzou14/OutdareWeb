@@ -1,4 +1,5 @@
 ﻿var fs = require('fs');
+var path = require('path');
 var routes = fs.readdirSync('./endpoints');
 
 function attach(app, routeFile) {
@@ -10,6 +11,6 @@ function attach(app, routeFile) {
 
 module.exports.attachTo = function (app) {
     for (var i in routes) {
-        attach(app, routes[i]);
+        attach(app, path.join(__dirname,'/endpoints/',routes[i]));
     }
 }
