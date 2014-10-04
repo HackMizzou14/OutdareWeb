@@ -21,6 +21,13 @@ var Dare = new Schema({
     details     : String
 });
 
+Dare.statics.getDaresNearby = function (location, done) {
+    module.exports.dare.find('*', function (e, docs) {
+        if (e) done(e, null);
+        else done(null, docs);
+    })
+}
+
 var Submission = new Schema({
     user_id : Schema.Types.ObjectId,
     dare_id : Schema.Types.ObjectId,

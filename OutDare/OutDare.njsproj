@@ -31,6 +31,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="database.js" />
+    <Compile Include="endpoints.js" />
+    <Compile Include="endpoints\createUser.js" />
+    <Compile Include="endpoints\dares.js" />
+    <Compile Include="endpoints\dare_create.js" />
+    <Compile Include="endpoints\image_submission.js" />
+    <Compile Include="endpoints\login.js" />
+    <Compile Include="endpoints\submissions.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\user.js" />
     <Content Include="package.json" />
@@ -40,6 +48,7 @@
     <Content Include="views\layout.jade" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="endpoints\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
