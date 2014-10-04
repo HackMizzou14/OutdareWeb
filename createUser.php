@@ -1,47 +1,32 @@
 <?php
 
-  //$queries = 'SELECT username, email, phonenumber FROM users WHERE username = :user;';
+$db = new SQLite3('outdare.db');
+
+$user = $_GET['user'];
+$email = $_GET['email'];
+$phone = $_GET['phone'];
+$password =$_GET['password'];
 
 
-
- 
-$db = new SQLite3 ('outdare.db');
-
- $queries = 'SELECT * FROM users';
-
-	$user = $_POST['user'];
-	$email = $_POST['email'];
-	$phone = $_POST['phone'];
-	$password =$_POST['password'];
+//$statement = $db->prepare('SELECT id,username, email, phonenumber FROM users WHERE username = :user;');
 
 
-	$statement = $db->prepare('SELECT id,username, email, phonenumber FROM users WHERE username = :user;');
+$insert = 'INSERT INTO users (username,password,email,phonenumber) VALUES (:user,:password,:email,:phone)';
 
-
-//	$insert = ('INSERT INTO users(id,username,password,email,phonenumber) VALUES (NULL,:user,:password,:email,:phone)');	
-
-	$insert = ('INSERT INTO users(id,username,password,email,phonenumber) VALUES (NULL,?,?,?,?)');	
+//$insert = 'INSERT INTO users(id,username,password,email,phonenumber) VALUES (NULL,?,?,?,?)';	
 
 
 
 
-	$statement = $db->prepare($insert);
-/*
-	$statement->bindValue(':user',$user);
-	$statement->bindValue(':password',$password);
-	$statement->bindValue(':email',$email);
-	$statement->bindValue(':phone',$phone);
-*/
+$statement = $db->prepare($insert);
 
-	$statement->execute($name,$passowrd,$email,$phone);
+$statement->bindValue(':user',$user);
+$statement->bindValue(':password',$password);
+$statement->bindValue(':email',$email);
+$statement->bindValue(':phone',$phone);
 
-
-
-
-
+//$what = $statement->execute($user,$password,$email,$phone);
+$what = $statement->execute();
+var_dump($what);
 	
-	
-
-
-
 ?> 
