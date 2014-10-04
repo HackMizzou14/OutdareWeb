@@ -10,14 +10,15 @@ module.exports.handler = function (req, res) {
     form.parse(req, function (err, fields, files) {
         console.log(files);
         var submission = new database.submission({
-            user_id : fields.user_id,
+            user    : fields.user,
             dare_id : fields.dare_id,
-            image   : files.image
+            image   : fs.readFileSync(files.image.path)
+        });
+        submission.save(function (e) {
+            if (e) throw ("failed to create new submission", e);
+            res.end();
         });
     })
 
-    submission.save(function (e) {
-        if (e) throw ("failed to create new submission", e);
-        res.end();
-    });
+
 }

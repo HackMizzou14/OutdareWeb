@@ -28,7 +28,7 @@ Dare.statics.getDaresNearby = function (location, done) {
 }
 
 var Submission = new Schema({
-    user_id : Schema.Types.ObjectId,
+    user    : String,
     dare_id : Schema.Types.ObjectId,
     image   : Buffer
 });
