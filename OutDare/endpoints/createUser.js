@@ -10,6 +10,7 @@ module.exports.handler = function (req, res) {
         phone    : req.body.phone
     });
     user.save(function (e) { 
+        user._id = '' + user._id;
         res.json(user);
     });
 }
