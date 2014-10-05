@@ -3,6 +3,7 @@
 module.exports.url = '/dares/create';
 module.exports.verb = 'post';
 module.exports.handler = function (req, res) {
+    console.log(req.body);
     var dare = new database.dare({
         user_id     : req.body.user_id,
         lat         : req.body.lat,
