@@ -6,7 +6,7 @@ module.exports.handler = function (req, res) {
     database.dare.getDaresNearby(
     {
         lat: req.query.lat,
-        lon: req.query.long
+        lon: req.query.lon
     }, 
     function (e, docs) {
         if (e) throw ("error getting dares", e);

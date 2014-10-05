@@ -6,7 +6,7 @@ module.exports.handler = function (req, res) {
     var dare = new database.dare({
         user_id     : req.body.user_id,
         lat         : req.body.lat,
-        lon         : req.body.long,
+        lon         : req.body.lon,
         title       : req.body.title,
         details     : req.body.details
     });
